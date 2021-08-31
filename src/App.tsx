@@ -1,8 +1,16 @@
-import React from 'react';
-import './App.css';
+import { FC } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import { Home } from "./screens/Home";
+import { Schedule } from "./screens/Schedule";
 
-export function App() {
+export const App: FC = () => {
   return (
-    <div >Hello World</div>
+    <Router>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/schedule" component={Schedule} />
+      </Switch>
+    </Router>
   );
-}
+};
